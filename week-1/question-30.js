@@ -1,15 +1,17 @@
 // Print all the factors of a number.
 
 const factors = (num) => {
-  //   let Factors = [];
+  let Factors = [];
   for (let i = 1; i <= Math.sqrt(num); i++) {
     if (num % i == 0) {
-      //   Factors.push(i);
-      console.log(i);
+      Factors.push(i);
+      if (i !== num / i) {
+        Factors.push(num / i);
+      }
     }
   }
-  //   return Factors;
+  return Factors.sort((a, b) => a - b);
 };
 
-// console.log(factors(36));
-factors(36);
+console.log(factors(36));
+// factors(36);
